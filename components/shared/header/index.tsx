@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 
 import { Button } from '@/components/ui/button';
 import ModeToggle from '@/components/mod-toggle';
+import Menu from './menu';
 
 const Header = ({ className }: { className?: string }) => {
     return (
@@ -24,21 +25,7 @@ const Header = ({ className }: { className?: string }) => {
                 </Link>
 
                 {/* Actions */}
-                <div className="space-x-2">
-                    <ModeToggle />
-                    <Button asChild variant="ghost">
-                        <Link href="/cart">
-                            <ShoppingCart />
-                            Cart
-                        </Link>
-                    </Button>
-                    <Button asChild>
-                        <Link href="/sign-in">
-                            <UserIcon />
-                            Sign In
-                        </Link>
-                    </Button>
-                </div>
+                <Menu />
             </div>
         </header>
 
