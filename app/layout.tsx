@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter } from 'next/font/google';
+import { ThemeProvider } from 'next-themes';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,10 +17,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <html lang="en">
+    <html lang="en">
+      <ThemeProvider
+        attribute='class'
+        defaultTheme='light'
+        enableSystem
+        disableTransitionOnChange
+      >
         <body className={inter.className}>
-            <main className="container">{children}</main>
+          <main className="container">{children}</main>
         </body>
-      </html>
+      </ThemeProvider>
+    </html>
   );
 }

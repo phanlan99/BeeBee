@@ -1,12 +1,14 @@
 import { ShoppingCart, UserIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
 import { Button } from '@/components/ui/button';
+import ModeToggle from '@/components/mod-toggle';
 
-const Header = () => {
+const Header = ({ className }: { className?: string }) => {
     return (
-        <header className="w-full border-b px-10 p-5">
+        <header className={cn("w-full border-b p-5", className)}>
             <div className="wrapper flex justify-between items-center">
                 {/* Logo */}
                 <Link href="/" className="flex items-center">
@@ -23,6 +25,7 @@ const Header = () => {
 
                 {/* Actions */}
                 <div className="space-x-2">
+                    <ModeToggle />
                     <Button asChild variant="ghost">
                         <Link href="/cart">
                             <ShoppingCart />

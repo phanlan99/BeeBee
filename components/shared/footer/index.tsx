@@ -1,9 +1,15 @@
-import React from 'react'
+import { APP_NAME } from "@/lib/constants/name";
 
-function Footer() {
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <div>Footer</div>
-  )
-}
+    <footer className='border-t flex items-center justify-center'>
+      <div className='p-5 flex-center'>
+        {currentYear} {APP_NAME}. All Rights reserved.
+      </div>
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;
