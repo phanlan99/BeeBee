@@ -1,6 +1,12 @@
 import { Button } from "@/components/ui/button";
+import sampleData from "@/db/sample-data";
+import ProductList from "@/components/shared/products/product-list";
 
-function HomePage() {
-  return <Button className="bg-slate-600"> ABCCCCCCCCCCCCCCCCCC</Button>;
-}
+const HomePage = () => {
+  return (
+    <div className='space-y-8'>
+      <h2 className='h2-bold'>Latest Products</h2>
+      <ProductList title='Newest Arrivals' data={sampleData.products} limit={2} />    </div>
+  );
+};
 export default HomePage;
